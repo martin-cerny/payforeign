@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>Foreign pay</title>
+        <link href="/webjars/materializecss/0.97.5/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <p>Page content goes here</p>
+        </section>
+        <script src="/webjars/jquery/2.2.0/jquery.js"></script>
+        <script src="/webjars/materializecss/0.97.5/js/materialize.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+                // for HTML5 "required" attribute
+                $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0});
+            });
+        </script>
+    </body>
+</html>
