@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Entity
 public class Article {
-    
+
     @Id
     @GeneratedValue
     private Long id;
-    
+
     @NotEmpty
     private String locale;
     @NotEmpty
@@ -24,11 +24,11 @@ public class Article {
     @NotEmpty
     private String description;
     @NotEmpty
-    private String text; 
-    
+    private String text;
+
     private Timestamp created;
     private Timestamp updated;
-   
+
     protected Article() {
     }
 
@@ -44,7 +44,7 @@ public class Article {
     public Long getId() {
         return id;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -56,11 +56,11 @@ public class Article {
     public void setLocale(String locale) {
         this.locale = locale;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     @ModelAttribute("locales")
     public LocaleEnum[] getLocales() {
         return LocaleEnum.values();
@@ -85,7 +85,7 @@ public class Article {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     public String getText() {
         return text;
     }
@@ -101,5 +101,5 @@ public class Article {
     public Timestamp getUpdated() {
         return updated;
     }
-    
+
 }

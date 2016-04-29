@@ -10,9 +10,9 @@ package com.payforeign.locale;
  * @author martin
  */
 public enum LocaleEnum {
-    
+
     en("en", "English"), cs("cs", "Czech");
-    
+
     private final String locale;
     private final String desc;
 
@@ -31,6 +31,5 @@ public enum LocaleEnum {
     {
         return desc;
     }
- 
-    
+
 }

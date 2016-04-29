@@ -7,7 +7,7 @@ layout:decorator="layout/default">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.5/tinymce.min.js"></script>
         <script>
-            tinymce.init({ 
+            tinymce.init({
                 selector:'textarea.tinymce',
                 height: 450,
                 plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker\n\
@@ -21,7 +21,7 @@ layout:decorator="layout/default">
         <div class="row" layout:fragment="content">
             <h4 class="indigo-text center" th:text="#{article.title}">Create new service article</h4>
             <form action="#" method="post" class="col m8 s12 offset-m2"
-                  th:action="@{/service/store/}" 
+                  th:action="@{/service/store/}"
                   th:object="${article}">
                 <input th:field="*{id}" type="hidden"/>
                 <div class="row">
