@@ -1,10 +1,13 @@
 package com.payforeign.article;
 
 import com.payforeign.locale.LocaleEnum;
-import java.sql.Timestamp;
+import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -26,8 +29,10 @@ public class Article {
     @NotEmpty
     private String text;
 
-    private Timestamp created;
-    private Timestamp updated;
+
+    @Column(name = "created", nullable = false, updatable=false)
+    private Date created;
+    private Date updated;
 
     protected Article() {
     }
@@ -39,6 +44,16 @@ public class Article {
         this.title = title;
         this.description = description;
         this.text = text;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        updated = created = new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
     }
 
     public Long getId() {
@@ -94,11 +109,11 @@ public class Article {
         this.text = text;
     }
 
-    public Timestamp getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public Timestamp getUpdated() {
+    public Date getUpdated() {
         return updated;
     }
 
