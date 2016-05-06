@@ -13,7 +13,7 @@ public class Article {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @NotEmpty
     private String locale;
@@ -32,7 +32,7 @@ public class Article {
     protected Article() {
     }
 
-    public Article(Integer id, String locale, String name, String title, String description, String text) {
+    public Article(Long id, String locale, String name, String title, String description, String text) {
         this.id = id;
         this.locale = locale;
         this.name = name;
@@ -41,11 +41,11 @@ public class Article {
         this.text = text;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
