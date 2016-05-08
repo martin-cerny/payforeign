@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout/default">
+    <head lang="en">
+        <title>Index</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="row" layout:fragment="content">
+            <h4 class="indigo-text center">Index page</h4>
+        </div>
     </body>
 </html>
