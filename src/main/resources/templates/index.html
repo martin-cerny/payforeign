@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout/default">
+  <head lang="en">
+      <title th:text="#{index.title}">Comparison of services transferring money abroad</title>
+  </head>
+  <body>
+    <div class="row" layout:fragment="content">
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <div class="col s12 m6 top-buffer-5">
+              <h1 class="header center light-blue-text text-accent-3" th:text="#{index.heading}">Transfer your money abroad</h1>
+              <div class="row center">
+                <h5 class="header col s12 light" th:text="#{index.tagline}">Find the cheapest way how to transfer your money</h5>
+              </div>
+              <br/><br/>
+            </div>
+            <form action="/calculator" method="get" class="col s12 m6 top-buffer-10">
+              <div class="input-field col s6">
+                <input id="amount" name="amount" type="text" class="validate"/>
+                <label for="amount" th:text="#{calculator.amount}">Amount</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="country_from" name="country_from" type="text" class="validate"/>
+                <label for="country_from" th:text="#{calculator.country_from}">Sending from</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="country_to" name="country_to" type="text" class="validate"/>
+                <label for="country_to"  th:text="#{calculator.country_to}">Sending to</label>
+              </div>
+              <div class="row center">
+                <button class="btn-large waves-effect waves-light teal accent-4" th:text="#{calculator.checkBestOption}">Check The Best Option</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"/></div>
+      </div>
+    </div>
+  </body>
+</html>
